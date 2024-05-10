@@ -11,18 +11,17 @@ export default function renderLocation(location, isAvailableLocation = true) {
   } else {
     attributes=`
           hx-delete="/places/${location.id}"
-          hx-confirm="Ar you sure?"
+          hx-confirm="Are you sure?"
           hx=target="closest li"
           hx-swap="outerHTML"
     `;
   }
   return `
-    <li class="location-item">
-      <button ${attributes}
-        >
-        <img src="${`/images/${location.image.src}`}" alt="${location.image.alt}" />
-        <h3>${location.title}</h3>
-      </button>
-    </li>
-  `;
-}
+          <li class="location-item">
+            <button ${attributes}>
+              <img src="${`/images/${location.image.src}`}" alt="${location.image.alt}" />
+              <h3>${location.title}</h3>
+            </button>
+          </li>
+        `;
+      }
